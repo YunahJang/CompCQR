@@ -90,18 +90,6 @@ The main experiments use:
 
 Additional experiments include GTR, Contriever, Qwen2.5-72B, and Llama-3.3-70B.
 
-## Citation
-
-If you find our work useful, please cite:
-
-```bibtex
-@inproceedings{jang2026compcqr,
-  title     = {CompCQR: Compositional Query Generation for Training-Free Conversational Search},
-  author    = {Jang, Yunah and Lee, Kang-il and Shin, Joongbo and Jung, Kyomin},
-  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
-  year      = {2026}
-}
-```
 
 ## Contact
 
