@@ -1,0 +1,17 @@
+# ── core ────────────────────────────────────────────────────────────────
+numpy>=1.22
+PyYAML>=6.0
+tqdm>=4.65
+h5py>=3.7
+pytrec-eval>=0.5
+
+# ── LLM back-ends (install what you use) ────────────────────────────────
+openai>=1.30            # deepinfra / openai back-ends
+transformers>=4.43      # hf back-end
+torch>=2.1              # hf / vllm back-ends, dense retrieval
+# vllm>=0.6.0           # vllm back-end (optional)
+
+# ── retrieval ───────────────────────────────────────────────────────────
+sentence-transformers>=2.7
+faiss-gpu>=1.7.2        # or faiss-cpu
+# pyserini>=0.16        # BM25 only (needs a JVM)

@@ -1,0 +1,44 @@
+# ─────────────────────────────────────────────────────────────────────────
+#  QReCC (test)
+# ─────────────────────────────────────────────────────────────────────────
+dataset: qrecc
+split: test
+schema: qrecc
+id_prefix_strip: "QReCC-Test_"   # qrels and inputs disagree on this prefix
+
+paths:
+  input_file:    datasets/qrecc/test.json
+  qrel_file:     datasets/qrecc/qrecc_qrel.tsv
+  collection_h5: datasets/qrecc/collections/data.h5
+  demonstrations: prompts/demonstrations.json
+  work_dir:      work/qrecc
+  output_dir:    output/qrecc
+
+variations:
+  components: [oq, mq, ma, mq2, ma2]
+  max_k: 5
+  joiner: "+"
+
+fusion:
+  rrf_k: 0
+  top_n: 100
+
+selection:
+  history_turns: 4
+
+default_retriever: ance
+
+retrievers:
+  ance:
+    type: dense
+    encoder: sentence-transformers/msmarco-roberta-base-ance-firstp
+    dim: 768
+    index_dir: indexes/qrecc/ance
+    index_splits: 10
+    normalize: false
+
+  bm25:
+    type: bm25
+    index_dir: indexes/qrecc/bm25
+    k1: 0.82
+    b: 0.68
